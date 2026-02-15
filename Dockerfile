@@ -24,8 +24,8 @@ FROM scratch
 WORKDIR /app
 
 # Copy the compiled binary and templates from builder
-COPY --from=builder ./BandNames .
-COPY --from=builder ./templates ./templates
+COPY --from=builder app/BandNames .
+COPY --from=builder app/templates ./templates
 
 # Command to run the binaries
-CMD ["/BandNames"]
+CMD ["./BandNames"]
